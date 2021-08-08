@@ -1,0 +1,354 @@
+Do the below programs in anonymous function & IIFE
+1.Print odd numbers in an array
+
+ var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+   function Oddnum(num)
+   {
+var OddArr=[];
+var count =0
+var j=0;
+for(var i=0; i<num.length; i++)
+{
+if(num[i]%2!=0)
+OddArr[j] = num[i];
+else
+j=j+1;
+}
+console.log(OddArr);
+}
+Oddnum(numsArr);
+
+2.Convert all the strings to title caps in a string array
+
+var arr = ['guvi', 'geek', 'zen', 'fullstack'];
+function UppCase(str) 
+{
+ for (var i = 0; i <= str.length; i++) 
+ {
+ console.log(str[i].toUpperCase());
+ }
+}
+UppCase(arr);
+
+3.Sum of all numbers in an array
+
+var arr=[1,2,3,4,5,6,7];
+var sum =0;
+function Sumarr(val)
+{
+for(var i=0;i<val.length;i++)
+{
+sum=sum+val[i];
+}
+return sum;
+}
+console.log(Sumarr(arr));
+
+4.Return all the prime numbers in an array
+
+const newArray=[1,3,2,5,7,10,13];
+const myPrime = newArray.filter((element)=>{
+    if(element%element ==0)
+    {
+        if(element%2!=0)
+        return element;
+    }
+});
+        console.log(myPrime);
+
+5.Return all the palindromes in an array
+
+//palindrome
+function fnCheckPalindrome(strP)
+{
+    var strP_rev="";//strP.reverse();'
+
+for (var i=strP.length-1;i>=0;i--)
+strP_rev+=strP.substr(i,1);
+
+console.log(strP_rev);
+
+    if (strP==strP_rev)
+    return strP + " Its a palindrome"
+    else 
+    return strP + " Not a palindrome";
+}
+var word = ["noon", "mam", "madam", "refer", "element"];
+for(var j=0;j<word.length;j++)
+console.log(fnCheckPalindrome(word[j]));
+
+
+6.Return median of two sorted arrays of same size
+
+ let arr1 = [1,2,7,4,5];
+   let arr2 = [6,2,4,8,3];
+   arr1 = arr1.sort();
+   arr2 = arr2.sort();
+   var MedianofArr = function(num1,num2)
+   {
+ var  mediannum =(arr1.length + 1)/2;
+//var mediannum2 =(arr2.length + 1)/2;   
+
+var median1 =arr1[mediannum-1];
+console.log(median1);
+var median2 =arr2[mediannum-1];
+console.log(median1);
+}
+MedianofArr(arr1,arr2);
+
+7.Remove duplicates from an array
+
+var arr=[1,2,2,3,5,4,6,6,7,8];
+
+var RemoveDuplicates = function()
+{
+var Uniquearr = [...new Set(arr)];
+console.log(Uniquearr);
+}
+RemoveDuplicates();
+
+8.Rotate an array by k times
+
+function fnRotateArray(rotArr,times)
+{
+//var rotArr = [1, 2, 3, 4, 5];
+var rotArrF=[];
+//var times=5;
+
+console.log(rotArr);
+for (var i = 1; i <= times; i++)
+{
+ 
+ for(var j = 0 ; j < rotArr.length;j++ )
+ {
+     if(j==rotArr.length-1)
+      rotArrF[0]=rotArr[j];
+      //rotArr[0]=rotArr[j];
+      else
+        rotArrF[j+1]=rotArr[j];
+        //rotArr[j+1]=rotArr[j];
+}
+console.log(i,rotArrF);
+
+for(var k=0;k<rotArr.length;k++)
+    rotArr[k]=rotArrF[k];
+}
+}
+
+var ra = [11, 22, 33, 44, 55];
+var ts=5;
+fnRotateArray(ra,ts);
+
+https://medium.com/@reach2arunprakash/guvi-zen-class-javascript-warm-up-programming-problems-15973c74b87f
+
+1.Write a function called “addFive”.
+Given a number, “addFive” returns 5 added to that number.
+
+var arr =[1,0,2,8,5];
+function addfive(val){
+    var addf = val.map((element)=>{
+        element=element+5;
+        return element;
+});
+console.log(addf);
+}
+addfive(arr);
+
+2.Fill in your code that takes an number minutes and converts it to seconds.
+
+var a=userInput[0];
+var sec=0;
+sec=a*60;
+console.log(sec);
+
+3.Create a function that takes a string and returns it as an integer.
+
+var a="5";
+var convinteger = parseInt(a);
+console.log(convinteger);
+
+4.Create a function that takes a number as an argument, increments the number by +1 and returns the result.
+
+var myint = 10;
+function nextNumber(myint) 
+{
+    var incint=myint+1;
+    return incint;
+}
+var myNextint = nextNumber(myint);
+console.log(myNextint);
+
+5.Create a function that takes an array and returns the first element.
+
+var arr = [1, 2, 3];
+function getFirstElement(arr)
+{
+    var firstele = arr[0];
+    return firstele;
+}
+var data = getFirstElement(arr);
+console.log(data);
+
+6.Write a function to convert Hours into Seconds
+
+var arr = [1, 2, 3];
+function hourToSeconds(arr) 
+{
+  var sec=[];
+  var min=[];
+  for(var i=0;i<arr.length; i++)
+    {
+     min[i] = arr[i]*60;
+     sec[i]=min[i]*60;
+    }
+    return sec;
+}
+var data = hourToSeconds(arr);
+
+console.log(data);
+
+7.Find the Perimeter of a Rectangle
+Create a function that takes height and width and finds the perimeter of a rectangle.
+
+function findPerimeter(num1,num2) 
+{
+
+    var per = 2*(num1+num2);
+    return per;
+}
+var peri = findPerimeter(6,7);
+console.log("Perimeter of rectangle is " + peri);
+
+8.Given two numbers, return true if the sum of both numbers is less than 100. Otherwise return false.
+
+function lessThan100(num1,num2)
+{
+    var sum = num1+num2;
+    if(sum<100)
+    return "true";
+    else
+    return "false";
+}
+var res = lessThan100(22,15);
+console.log(res);
+
+9.Implement a function that returns the total number of legs of all the animals.
+
+function CountAnimals(tur,horse,pigs) 
+{
+    totlegs=2*tur+4*horse+4*pigs;
+    return totlegs;
+}
+var legs = CountAnimals(5,2,8)
+console.log(legs);
+
+10.Create a function that returns true if an integer is evenly divisible by 5, and false otherwise.
+
+function divisibleByFive(num1) 
+{
+    if(num1%5==0)
+    return "true";
+    else
+    return "false";
+}
+var divisible = divisibleByFive(-55)
+console.log(divisible);
+
+11.Write a function called “isEven”.
+Given a number, “isEven” returns whether it is even.
+
+function isEven(num)
+{
+    if(num%2==0)
+    return true;
+    else
+    return false;
+}
+var even = isEven(50)
+console.log(even);
+
+12.Write a function called “areBothOdd”.
+Given 2 numbers, “areBothOdd” returns whether or not both of the given numbers are odd.
+
+function areBothOdd(num1, num2)
+{
+    if(num1%2!=0) 
+    {
+        if(num2%2!=0)
+        {
+            return true;
+        }
+        return false;
+    }
+    return false;
+}
+console.log(areBothOdd(8,7));
+
+13.Given a first and a last name, “getFullName” returns a single string with the given first and last names separated by a single space.
+
+function getFullName(firstName, lastName)
+{
+    var fullname = firstName +" "+ lastName;
+    return fullname;
+}
+console.log(getFullName("guvi","geek"));
+
+14.Write a function called “getLengthOfWord”.
+Given a word, “getLengthOfWord” returns the length of the given word.
+Input:
+getLengthOfWord(“GUVI”);
+getLengthOfWord(“”);
+getLengthOfWord();
+getLengthOfWord(9);
+
+var a="word";
+console.log(a.length);
+
+
+3.Do the below programs in arrow functions
+a.Print odd numbers in an array
+
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var OddArr=[];
+var count =0
+var j=0;
+for(var i=0; i<numsArr.length; i++)
+{
+if(numsArr[i]%2!=0)
+OddArr[j] = numsArr[i];
+else
+j=j+1;
+}
+console.log(OddArr);
+
+var OddArr = numsArr.filter(element=>element%2!=0)
+console.log(OddArr);
+
+b.Convert all the strings to title caps in a string array
+
+var arr = ['guvi', 'geek', 'zen', 'fullstack'];
+
+var TC = arr . map((ele)=>ele.toUpperCase());
+console.log(TC);
+
+c.Sum of all numbers in an array
+
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+
+const sum = numsArr.reduce((acc,ele)=>acc+ele);
+console.log(sum);
+
+d.Return all the prime numbers in an array
+
+const newArray=[1,3,2,5,7,10,13];
+const myPrime = newArray.filter((element)=>{
+    if(element%element ==0)
+    {
+        if(element%2!=0)
+        return element;
+    }
+});
+console.log(myPrime);
+
+
+
